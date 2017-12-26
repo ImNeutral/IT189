@@ -1,0 +1,36 @@
+.main-content {
+    margin: 5rem 1rem 0rem 1rem;
+
+}
+
+.navbar-style {
+    width: 100%;
+    padding-right: 20px;
+    border-right: 1px solid #eee;
+}
+
+.btn-nav:hover {
+    text-align: left;
+}
+
+.btn-nav.active {
+    padding-right: 100%;
+    border-top-right-radius: 25px !important;
+    border-bottom-right-radius: 25px !important;
+}
+
+.sub-content {
+    background-color: #f9f9f9a6;
+    border: 1px solid #eee;
+    padding: 1rem 1rem 1rem 1rem;
+    margin: 0rem 0rem 1rem 0rem;
+}
+
+.btn-light {
+    border-color: #eee;
+}
+
+.display-3 {
+    font-size: 2rem;
+
+}
