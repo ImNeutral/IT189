@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-	return view('pages.page1');
-});
+Route::get('/',     'PagesController@basicInformation');
+Route::post('/',     'PagesController@basicInformationCreate');
