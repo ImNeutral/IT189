@@ -19,7 +19,7 @@
             <div class="form-group row">
                 <label for="faculty_id" class="col-sm-3 col-form-label">Evaluation Date:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="faculty_id" placeholder="faculty_id" value="{{ date('m d, Y') }}" disabled>
+                    <input type="text" class="form-control" id="faculty_id" placeholder="faculty_id" value="{{ date('M d, Y') }}" disabled>
                 </div>
             </div>
 
@@ -62,13 +62,6 @@
                 <label for="department" class="col-sm-3 col-form-label">Department:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="department" placeholder="College Department">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="dole" class="col-sm-3 col-form-label">Date Of Last Evaluation:</label>
-                <div class="col-sm-9">
-                    <input type="date" class="form-control" id="dole" placeholder="Date Of Last Evaluation">
                 </div>
             </div>
 
