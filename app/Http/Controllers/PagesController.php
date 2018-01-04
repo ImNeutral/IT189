@@ -50,9 +50,24 @@ class PagesController extends Controller
     }
 
     /** VI to VII **/
-    public function extraAcademicActivities()
+    
+    public function getExtraAcademicActivities()
     {
-        
+        $rankCategories = RankCategory::get();
+        $id             = isset($_GET['employee_id'])? $_GET['employee_id'] : 0;
+
+        if(!$id) {
+            return view('pages.basic-information-create')->with(['rankCategories' => $rankCategories]);
+        }
+
+        $employee = Employee::find($id);
+        return view('pages.basic-information-edit')->with(['rankCategories' => $rankCategories, 'employee' => $employee]);
+    }
+
+    public function postExtraAcademicActivities()
+    {
+        //  return view
+        //  enable sessions / set
     }
 
     /** End VI to VII **/
