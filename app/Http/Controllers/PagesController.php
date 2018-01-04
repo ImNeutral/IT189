@@ -48,4 +48,12 @@ class PagesController extends Controller
             ]);
         return redirect( $this->page_root() . '?employee_id=1');
     }
+
+    /** VI to VII **/
+    public function extraAcademicActivities()
+    {
+        
+    }
+
+    /** End VI to VII **/
 }
