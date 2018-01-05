@@ -113,7 +113,7 @@ class PagesController extends Controller
     public function extensionServices()
     {
         $params = [
-            'pageNumber'        => 1
+            'pageNumber'        => 7
         ];
         return view( PageNames::pageFile(7) )->with($params);
     }
