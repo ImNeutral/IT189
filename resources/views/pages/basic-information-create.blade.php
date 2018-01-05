@@ -7,15 +7,11 @@
     <div class="col-lg-9 col-md-8 sub-content">
         <form method="POST">
             {{ csrf_field() }}
-            <div class="row justify-content-between">
-                <div class="col-3">
-                    {{--<a href="#" class="btn btn-outline-success btn-sm"><< Previous</a>--}}
-                </div>
-                <div class="col-3 text-right">
-                    <button href="#" type="submit" class="btn btn-outline-success btn-sm">Next >></button>
-                </div>
-            </div>
-            <div class="display-3 text-center">Basic Information Create HERE!</div>
+
+            @include('layouts.previous-next-control')
+
+
+            <div class="display-3 text-center">Basic Information</div>
             <hr>
             <div class="form-group row">
                 <label for="evaluation-date" class="col-sm-3 col-form-label">Evaluation Date:</label>
@@ -91,4 +87,10 @@
 @endsection
 
 
-
+@section('foot')
+<script type="application/javascript">
+    $(document).ready(function(){
+        $('#basic-information').addClass('active');
+    });
+</script>
+@endsection
