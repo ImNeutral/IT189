@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/',     'PagesController@basicInformation');
 Route::post('/',     'PagesController@basicInformationCreate');
 
@@ -23,3 +24,19 @@ Route::get(
 )->name('get.extra-academic-activities');
 
 /** End VI to VII **/
+
+Route::get('/', function(){
+    return redirect('/basic-information');
+});
+
+Route::get('/basic-information',            'PagesController@basicInformation');
+Route::post('/basic-information',           'PagesController@basicInformationCreate');
+
+Route::get('/educational-attainment',       'PagesController@educationalAttainment');
+Route::get('/work-experience',              'PagesController@workExperience');
+Route::get('/productivity',                 'PagesController@productivity');
+Route::get('/teaching-efficiency-rating',   'PagesController@teachingEfficiencyRating');
+Route::get('/professional-growth',          'PagesController@professionalGrowth');
+Route::get('/extra-academic-activities',    'PagesController@extraAcademicActivities');
+Route::get('/extension-services',           'PagesController@extensionServices');
+

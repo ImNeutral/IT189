@@ -1,1 +1,1 @@
-"Testing Shits" 
+Should we use javascript for submitting forms? or we use normal php? It could also change the pagination method depending on what we choose.

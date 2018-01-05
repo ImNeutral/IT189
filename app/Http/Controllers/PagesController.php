@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Employee;
+use App\PageNames;
 use App\RankCategory;
 use Illuminate\Http\Request;
 
@@ -12,16 +13,25 @@ class PagesController extends Controller
         return "/";
     }
 
+    /** Basic Information */
+
     public function basicInformation() {
         $rankCategories = RankCategory::get();
         $id             = isset($_GET['employee_id'])? $_GET['employee_id'] : 0;
 
         if(!$id) {
-            return view('pages.basic-information-create')->with(['rankCategories' => $rankCategories]);
+            return view('pages.basic-information-create')->with(['rankCategories' => $rankCategories, 'pageNumber' => 0]);
         }
 
         $employee = Employee::find($id);
-        return view('pages.basic-information-edit')->with(['rankCategories' => $rankCategories, 'employee' => $employee]);
+
+        $params = [
+            'rankCategories'    => $rankCategories,
+            'employee'          => $employee,
+            'pageNumber'        => 0
+        ];
+
+        return view('pages.basic-information-edit')->with($params);
     }
 
     public function basicInformationCreate(Request $request) {
@@ -46,13 +56,56 @@ class PagesController extends Controller
                 'current_rank'      => $current_rank,
                 'for_rank_category_id'  => $for_rank
             ]);
-        return redirect( $this->page_root() . '?employee_id=1');
+        return redirect( PageNames::page(1) . '?employee_id=1');
     }
+    /** Basic Information End */
+
+
+    /** I - V */
+    public function educationalAttainment(){
+        $params = [
+            'pageNumber'        => 1
+        ];
+        return view( PageNames::pageFile(1) )->with($params);
+    }
+
+    public function workExperience(){
+        $params = [
+            'pageNumber'        => 2
+        ];
+        return view( PageNames::pageFile(2) )->with($params);
+    }
+
+    public function productivity(){
+        $params = [
+            'pageNumber'        => 3
+        ];
+        return view( PageNames::pageFile(3) )->with($params);
+    }
+
+    public function teachingEfficiencyRating(){
+        $params = [
+            'pageNumber'        => 4
+        ];
+        return view( PageNames::pageFile(4) )->with($params);
+    }
+
+    public function professionalGrowth(){
+        $params = [
+            'pageNumber'        => 5
+        ];
+        return view( PageNames::pageFile(5) )->with($params);
+    }
+
+    /** I - V end */
+
+
 
     /** VI to VII **/
     
     public function getExtraAcademicActivities()
     {
+
    
         return view('pages.extra-academic');  
     }
@@ -61,6 +114,19 @@ class PagesController extends Controller
     {
         //  return view
         //  enable sessions / set
+=======
+        $params = [
+            'pageNumber'        => 6
+        ];
+        return view( PageNames::pageFile(6) )->with($params);
+    }
+
+    public function extensionServices()
+    {
+        $params = [
+            'pageNumber'        => 7
+        ];
+        return view( PageNames::pageFile(7) )->with($params);
     }
 
     /** End VI to VII **/
