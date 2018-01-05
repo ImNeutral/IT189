@@ -102,8 +102,19 @@ class PagesController extends Controller
 
 
     /** VI to VII **/
-    public function extraAcademicActivities()
+    
+    public function getExtraAcademicActivities()
     {
+
+   
+        return view('pages.extra-academic');  
+    }
+
+    public function postExtraAcademicActivities()
+    {
+        //  return view
+        //  enable sessions / set
+=======
         $params = [
             'pageNumber'        => 6
         ];
