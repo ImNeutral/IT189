@@ -53,15 +53,8 @@ class PagesController extends Controller
     
     public function getExtraAcademicActivities()
     {
-        $rankCategories = RankCategory::get();
-        $id             = isset($_GET['employee_id'])? $_GET['employee_id'] : 0;
-
-        if(!$id) {
-            return view('pages.basic-information-create')->with(['rankCategories' => $rankCategories]);
-        }
-
-        $employee = Employee::find($id);
-        return view('pages.basic-information-edit')->with(['rankCategories' => $rankCategories, 'employee' => $employee]);
+   
+        return view('pages.extra-academic');  
     }
 
     public function postExtraAcademicActivities()

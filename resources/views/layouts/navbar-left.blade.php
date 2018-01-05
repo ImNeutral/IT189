@@ -7,7 +7,7 @@
         <a class="btn btn-light btn-nav" href="#">IV - Teaching Efficiency Rating</a>
         <a class="btn btn-light btn-nav" href="#">V - Professional Growth</a>
         <a href="{{ route('get.extra-academic-activities') }}"
-        class="btn btn-light btn-nav {{ Request::path() === '/extra-academic-activities/' ? 'active' : ''}}" 
+        class="btn btn-light btn-nav {{ Request::is('extra-academic-activities') ? 'active' : ''}}" 
         href="#">VI - Extra-academic Activities</a>
         <a class="btn btn-light btn-nav" href="#">VII - Extension Services</a>
     </div>

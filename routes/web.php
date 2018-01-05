@@ -13,7 +13,13 @@
 
 Route::get('/',     'PagesController@basicInformation');
 Route::post('/',     'PagesController@basicInformationCreate');
+
+
+/** VI to VII **/
+
 Route::get(
 	'/extra-academic-activities', 
 	'PagesController@getExtraAcademicActivities'
 )->name('get.extra-academic-activities');
+
+/** End VI to VII **/
